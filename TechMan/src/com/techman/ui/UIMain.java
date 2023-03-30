@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class UIMain {
 	static void displayAdminMenu() {
 		System.out.println("0. Log out Admin");
-		System.out.println("1. Add new Category");
-		System.out.println("2. View all products for a Category");
-		System.out.println("3. Add new Product");
+		System.out.println("1. Add new Engineer");
+		System.out.println("2. View all the Registered Engineers.");
+		System.out.println("3. Delete An Engineer");
 		System.out.println("4. View All Products");
 		System.out.println("5. View all Users");
 		System.out.println("6. View all Orders");
@@ -24,13 +24,13 @@ public class UIMain {
 					System.out.println("Bye Bye admin");
 					break;
 				case 1:
-//					CategoryUI.addCategoryUI(sc);
+					EngineerUI.addEngineerUI(sc);
 					break;
 				case 2:
-//					ProductUI.viewProductsByCategoryId(sc);
+					EngineerUI.ViewalltheRegisteredEngineers();
 					break;
 				case 3:
-					//productUI.addProduct();
+					EngineerUI.deleteEngineerUI(sc);
 					break;
 				case 4:
 					//userUI.viewAllUsers();
