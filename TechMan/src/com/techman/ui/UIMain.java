@@ -2,15 +2,19 @@ package com.techman.ui;
 
 import java.util.Scanner;
 
+import com.techman.exception.NoRecordFoundException;
+import com.techman.exception.SomethingWentWrongException;
+
+
 public class UIMain {
 	static void displayAdminMenu() {
 		System.out.println("0. Log out Admin");
-		System.out.println("1. Add new Category");
-		System.out.println("2. View all products for a Category");
-		System.out.println("3. Add new Product");
-		System.out.println("4. View All Products");
-		System.out.println("5. View all Users");
-		System.out.println("6. View all Orders");
+		System.out.println("1. Add new Engineer");
+		System.out.println("2. View all the Registered Engineers.");
+		System.out.println("3. Delete An Engineer");
+		System.out.println("4. View all the raised problems.");
+		System.out.println("5. Assign problem to any Engineer.");
+		
 	}
 	
 	static void adminMenu(Scanner sc) {
@@ -24,19 +28,19 @@ public class UIMain {
 					System.out.println("Bye Bye admin");
 					break;
 				case 1:
-//					CategoryUI.addCategoryUI(sc);
+					EngineerUI.addEngineerUI(sc);
 					break;
 				case 2:
-//					ProductUI.viewProductsByCategoryId(sc);
+					EngineerUI.ViewalltheRegisteredEngineers();
 					break;
 				case 3:
-					//productUI.addProduct();
+					EngineerUI.deleteEngineerUI(sc);
 					break;
 				case 4:
-					//userUI.viewAllUsers();
+					ProblemUI.Viewalltheraisedproblems();
 					break;
 				case 5:
-					//orderUI.viewAllOrders();
+					ProblemUI.assignproblemtoanyEngineer(sc);
 //					SELECT U.username, P.pro_name
 //					FROM orders O INNER JOIN product P ON 
 //					O.product_id = P.id INNER JOIN user U ON
@@ -59,23 +63,24 @@ public class UIMain {
 		if(username.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin")) {
 			adminMenu(sc);
 		}else {
-			System.out.println("Invalid Username and Password");
+			System.out.println("Invalid Username or Password");
+			System.out.println("Please try again");
+			adminLogin(sc);
 		}
 	}
 	static void displayUserMenu() {
-		System.out.println("1. View All Products");
-		System.out.println("2. Purchase a Product");
-		System.out.println("3. View Order History");
-		System.out.println("4. Update My Name");
-		System.out.println("5. Update My Password");
-		System.out.println("6. Delete My Account");
+		System.out.println("1. View the problems assigned to him by HOD");
+		System.out.println("2. Update the status of the problem addressed by him");
+		System.out.println("3. View list of all the problems attended by him/her.");
+		System.out.println("4. Update My Password");
+		
 		System.out.println("0. Logout");
 	}
 	
-	static void userLogin(Scanner sc) {
-		if(!UserUI.login(sc))
+	static void engineerLogin(Scanner sc) {
+		if(!EngineerUI.login(sc))
 			return;
-
+		
 		//you are here means login is successful
 		int choice = 0;
 		do {
@@ -84,24 +89,19 @@ public class UIMain {
 			choice = sc.nextInt();
 			switch(choice) {
 				case 1:
-					//productUI.viewAllProducts();
+					//EngineerUI.viewAllProblems();
 					break;
 				case 2:
-//					OrderUI.purchase(sc);
+//					EngineerUI.updatestatusoftheproblem(sc);
 					break;
 				case 3:
-					//orderUI.viewOrderDetails();
+					//EngineerUI.Viewlistofalltheproblemsattendedbyhim();
 					break;
 				case 4:
-					//userUI.updateNameOfUser();
+					//EngineerUI.changePassword();
 					break;
-				case 5:
-					//userUI.changePassword();
-					break;
-				case 6:
-					//userUI.deleteUser();
 				case 0:
-					UserUI.logout();
+					EngineerUI.logout();
 					break;
 				default:
 					System.out.println("Invalid Selection, try again");
@@ -109,13 +109,14 @@ public class UIMain {
 		}while(choice != 0);
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SomethingWentWrongException, NoRecordFoundException {
 		Scanner sc = new Scanner(System.in);
 		//user CategoryUI, ProductUI, OrderUI and 
 		// UserUI class here  
 		int choice = 0;
 		do {
-			System.out.println("1. Admin Login\n2. User Login\n3. User Sign Up\n0. Exit");
+			System.out.println("1. HOD Login\n2. Engineer Login\n3. "
+					+ "Emplyee LogIn Up\n0. Exit");
 			choice = sc.nextInt();
 			switch(choice) {
 				case 0:
@@ -125,10 +126,10 @@ public class UIMain {
 					adminLogin(sc);
 					break;
 				case 2:
-					userLogin(sc);
+					engineerLogin(sc);
 					break;
 				case 3:
-					//userUI.signup(sc);
+					emplyeeLogin(sc);
 					break;
 				default:
 					System.out.println("Invalid Selection, try again");
@@ -136,4 +137,42 @@ public class UIMain {
 		}while(choice != 0);
 		sc.close();
 	}
+
+	private static void emplyeeLogin(Scanner sc) throws SomethingWentWrongException, NoRecordFoundException {
+		if(!EmployeeUI.login(sc))
+			return;
+		
+		//you are here means login is successful
+		int choice = 0;
+		do {
+			System.out.println("1. Register A Complaint");
+			System.out.println("2. Status of their complain");
+			System.out.println("3. View list of all the complains raised by him/her.");
+			System.out.println("4. Update My Password");
+			System.out.println("0. Logout");
+			System.out.print("Enter selection ");
+			choice = sc.nextInt();
+			switch(choice) {
+				case 1:
+					EmployeeUI.registerAComplaint(sc);
+					break;
+				case 2:
+					EngineerUI.statusoftheircomplain(sc);
+					break;
+				case 3:
+					EngineerUI.viewlistofalltheproblemsattendedbyhim();
+					break;
+				case 4:
+					EngineerUI.changePassword(sc);
+					break;
+				case 0:
+					EmployeeUI.logout();
+					break;
+				default:
+					System.out.println("Invalid Selection, try again");
+			}
+		}while(choice != 0);
+	}
+
+	
 }
