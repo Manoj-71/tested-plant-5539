@@ -1,5 +1,5 @@
 
-![Logo](https://lh3.googleusercontent.com/PcYMviJrN5rYpvwj_ku4YY41l6aN-cUx-Peh08VYNgwcrYWqd0E-1QHdYdG3uIIn8CDNHovUgEmydqRZ_Om4Ahs2bk3p58R1Ga_L0nmFAiNUGUwAm_Wh9G0DKd0nkBk0tS-Kx6MOC3MaE13n7FLP13xMqUJqTodSxtwqYFs_nJx8DU8gB2IjR0Y37H_x0VdNPxWy2QFGpKnXVUgPlgKtQOP_FGI8LAwWoq14G-28gyDmQzbm0KZv27fEmZafH27kHTn-VQXFL_Xgz2oDvW1B9MrVZLP9pcl4zIUVTJQpyfgg7UOSn3R15bySnMazAJvDETMzteWDGmNrQY-g6R-CVWwE_TKqbAikU1PdmzFlqOrTf56Tw_ghoYwuO-Jdw7KAWtO6ePNn4O8bQbvUPd1agydlUZjWHCMDlb937fU8QMbykZAz4lZjR1TOjz4LDf9Q1mT1KydnosVWOEyUteoE60_OZRBn9s893xpt7MR4zowMDPBSlGqM36hccg_gOX14z_Xzp7bIulFT6-7kBDitFVKkquQUTMNvltiDWuvWSbI8Tq9cIdVcWIK77aj2TOswbBaE8mIvXC6-_-DxOGhxSRDWE_s44lbto9YIT16sdqBeWwxDI6DekmzBnJfK6TKjUvca3bOXzqcUx6gqykYSzNhlGMmEl3pRJyol7b7o1OJhRJ84m0B7p1Jx-y1FGEDN4G18Mvg_yBKE6IwUSHNXCrR9vI48lrRAT6OFHGiWGXEYsZcq1Vwsd0dIkgWpQGDZiREYCMzecTjzwVszD7D1WgzFCEMziu9mE9BmdDvn7K96d4cEa4nyO0kaL35JJooYP-Z90U3IQJTUhjRun1d3ckPNSL3lPlCo6ah7_diVRwFXWlpNK0L9CS-YxizPV3Anoo2e5eD_CUpwksV_0MDHHiCyjO4EoOFTu6kd6-g=w1097-h617-s-no?authuser=0)
+![Logo](https://user-images.githubusercontent.com/112793753/229409638-6c75e2fa-9173-48cd-9e62-078414d3d128.jpg)
 
 
 # TechMan
@@ -13,10 +13,10 @@ To ensure smooth operations, organisations must consider factors such as the cos
 
 ### ER Diagram.
 
-![ER Diagram SB101_project](https://lh3.googleusercontent.com/HfgKQwMuhX_tyN-tdqRcIfR9gcZbqsZNwgmAU4jG_EVnqTeBd5ToOx94dFRQ2zxrnXh9j6nuburfwYaX9PHS8vfZYFMA3jt9x0aLni2VlcImrVTbBc-De8xRg0VR1hm7zoAfm2IidhdyN0M-hj6R2Uo0T6DsdLa6HcLdQHxcfenlxvuMlkcvBUKiOufjscT_STz_3VFQ6EN9BaQOyZjeZRTQZgl9uIjaSVv9uV-L_vbcBaIsLHhPndAraYjXxTXcxgwF01dE7kr85Tl60OLzPwJVh3I1_VMSVIWZIUIpQxNKgki2peeh5MByhEGRtZcl2ki7RUL4jBM9V07rR3_BJ4jC1ItlPkyNwADJZE27cWY-yYr2Fdf7ja4CjhDF-Y7irWozRuwMzq46V0dKkBxAwC-Z92M690S9Iun0I_Dt4AGhzzpMdSlsPAo0Ba9Ot7IGlNmih16Q2JuIuq7SpvsjOiH1swoL7U6wtn9cClGRPQGgS45gcnuqz2A-OqoJgnGSZQS3ktjZI5zs_Rxbp6q4VA322jdSpr3n0GXsO9BQxGhURgW8bQdO8jD6_Zq2HFdRuXEPeL6nekGufO9iLViD133v6-iyNH_yM34YhuVPblnIjzey_IOGcdYrM-GjCD-v9bIud82fIPGmcV0pt0ilPkNt63cQXeRrpeZJPwQ3HeuyXO1a5UyMEODFuyE4lBVbWmjgfZDV4_y7J1ra_FrbWuFiZfKh1DhIujH0HsTVZfBu3xWeghXKft6EJxPnadXST14eyw0vnbUkN3zZYA_FZK9vvf773UVwk1xtQE0DCcxZMAido040tXdiUB7vzpBf50k2mjM2HFBgSNUeoW7y78Mv8dhRF_TAWLQMDh8jWLOU01IXHppitJrEqGuqiq0Ng9zL8wWGiykSu6otki5GM77VcnrF8v-ie3qmTbk=w1032-h617-s-no?authuser=0)
+![ER Diagram SB101_project](https://user-images.githubusercontent.com/112793753/229413225-e6391362-7439-4efb-962d-53ca35a36d94.png)
 
 ### Flow Chart
-![ER Diagram SB101_project](https://lh3.googleusercontent.com/TETDURzePuEhTb6EGnwRBldRzrqqQ8kc0jDZrQsZr66ZzVciKrMg8nnnDg6vKX2LrPOIXCbJat3MJcHEhSkZopdx2j5-9Mun6hSDApiuO0kGRI_6Trku9OX7HKEpBjUKnR-L12Q9GjD0ysrVW9UHugETXl3uRkIhHsA2DX83duI1aI5JUPLhk9l80YAjqelW2u-M7UP5MGnHj8A8sZNJhT887cc1qtJ1dQvkFlNUmRXUFIguDaVvVW6IlyCaP086hkaFTsWEB5LY0ZF4SEl9-FtZDOSD7Vnk1NLV6WVvhPq2p-d0oU0PS9oLJQ-ebKiE0nuYGSfsJ2HlhLACThVBVC5cK0MTpsAfDHzhUlWO9rM4wdhecXn8P29bDNQpW36xfKLfLX2hIkmOsK_3JitIgNT-rtIXD5DyXm0zfQJ5DB6Hy3WrxDHQ1cvaA_UAdR0eSzLyJ4BYBAvj2Euu0jCHNDEHYxRSV-GP9Gg9aWpyl7q78AcF6M6Rqe2CVQJk3NaHVCPCk_sg5h1ZvaXvs0mdQr8yfITGpyKfAP0wFWcrVI3yRhmZyp10P9Su9tjetmMbULLXdcVBUJg7-CzEyk3CYtPs7D2lCs9q7xc20hftFdIfu5L55XoCbDCz2c70GdZGby8xfa3X42TKsvvcmk2ofQefZNhASchngHeNDpFu1Irb63NI_5kTXWM2BEH8bGcWZnWGnaj0f_vFp7VAPcwaSqHu-AsVc6ThhrEdh66kjqTALylgeePl0LuUH36TTh9G55JVwGevcVGUb5h8W-jtr0tkftYA68t_fxdWHcKcT2vYuMY9icmFyVVYAq41XwtilMZpVAs2-1odK9k23lQtOyaYNPgnVKIxeMK8xBcLSbBsbxAv6TsIYi9L1Wa8Cjc9gz5t3_fzrDVe88Sho2jP1def1ADO1GKiloA0ZIU=w515-h617-s-no?authuser=0)
+![ER Diagram SB101_project](https://user-images.githubusercontent.com/112793753/229410283-7ea043c9-4c1d-4a55-8c3f-90e0b1fc1b9c.jpg)
 
 
 ## Users:
@@ -39,9 +39,9 @@ To ensure smooth operations, organisations must consider factors such as the cos
 
 - Assign Any Problem To Any Engineer
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+![App Screenshot](https://user-images.githubusercontent.com/112793753/229414163-2ed663c6-fd32-406e-af6a-9ef9f48b0975.png)
 
 ## Roles of Engineer:
 - Login(credentials given by the HOD)
@@ -54,9 +54,9 @@ To ensure smooth operations, organisations must consider factors such as the cos
 
 - Change His/Her Password
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://user-images.githubusercontent.com/112793753/229415406-5d5c72ce-9619-479c-adf2-c653ddbee370.png)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
 
 ## Roles of Employee:
 - Register
@@ -71,9 +71,8 @@ To ensure smooth operations, organisations must consider factors such as the cos
 
 - Change His/Her Password
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://user-images.githubusercontent.com/112793753/229415686-0c0cec38-9158-4111-a762-777fdf02aeff.png)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 ## Tech Stack
 
 Java , MySql , JDBC
