@@ -153,7 +153,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		try {
 			conn = DBUtils.getConnectionTodatabase();
 			String query="select com_id,department_name,subtype,status,email from Complaints C inner join"
-					+ " departments D on C.type=D.dept_id inner join engineers E on C.eng_id=E.id AND emp_id=?";
+					+ " departments D on C.type=D.dept_id inner join engineers E on C.eng_id=E.id emp_id=?";
 					
 			PreparedStatement ps = conn.prepareStatement(query);
 			ps.setInt(1, LoggedInUser.loggedInUserId);
@@ -162,6 +162,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 				String status;
 				if (rs.getInt(4)==0) {
 					status="Pending";
+				}else if (rs.getInt(4)==1) {
+					status="In Progress";
 				}else {
 					status="Solved";
 				}

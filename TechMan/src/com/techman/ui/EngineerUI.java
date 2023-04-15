@@ -68,7 +68,9 @@ public class EngineerUI {
     }
 	
 	static void addEngineerUI(Scanner sc) {
-		
+		System.out.println("-------------------------------------------------------\r\n"
+				+ "                     Registration Prompt\r\n"
+				+ "-------------------------------------------------------");
 	        String email;
 	        sc.nextLine();
 	        do {
@@ -84,9 +86,8 @@ public class EngineerUI {
 	        String password;
 	        
 	        do {
-	        	System.out.print("Enter password: ");
-	        	System.out.println("Note : Password must be at least 5 characters long and contain at least one uppercase letter, "
-	        			+ "one lowercase letter, and one digit");
+	        	System.out.println("Enter password: (Note: Password must be at least 5 characters long and contain at least one uppercase letter, one lowercase letter, and one digit)");
+	        	
 	        	password = sc.nextLine();
 
 	            if (!isValidPassword(password)) {
@@ -99,7 +100,9 @@ public class EngineerUI {
 	        int choice;
 	        int category;
 	        do {
-	            System.out.println("Select a category:");
+	            System.out.println("============================================\r\n"
+	            		+ "              Select a Category\r\n"
+	            		+ "============================================");
 	            System.out.println("1. Hardware");
 	            System.out.println("2. Software");
 	            
@@ -118,7 +121,9 @@ public class EngineerUI {
 	    EngineerDAO engineerDAO = new EngineerDAOImpl();
 		try {
 			engineerDAO.addEngineer(engineer);
-			System.out.println("Engineer added successfully");			
+			System.out.println("============================================\r\n"
+					+ "         Engineer Added Successfully\r\n"
+					+ "============================================");			
 		}catch(SomethingWentWrongException ex) {
 			System.out.println(ex);
 		}
@@ -129,8 +134,17 @@ public class EngineerUI {
 		EngineerDAO engineerDAO = new EngineerDAOImpl();
 		try {
 			List<EngineerDTO> engineerDTOs = engineerDAO.getEngineerList();
-			Consumer<EngineerDTO> con = eng -> System.out.println("Username " + eng.getEmail() + " Password " + eng.getPassword() 
-			+ " Category " + eng.getCategory());
+			
+			System.out.println("+----------------------------------------------------+\r\n"
+					+          "|                   Engineer List                    |\r\n"
+					+          "+-----------------------+-----------------------+----+");
+			System.out.println("+-----------------------+-----------------------+----------+\r\n"
+					+ 		   "| Username              | Password              |Department|\r\n"
+					+ 		   "+-----------------------+-----------------------+----------+");
+			Consumer<EngineerDTO> con = eng -> {	
+				System.out.print("| "+eng.getEmail() + "      |" + eng.getPassword() + "             | " + (eng.getCategory() == 1 ? "Hardware  |" : "Software  |"));
+				System.out.println();
+			};
 			engineerDTOs.forEach(con);
 		}catch(SomethingWentWrongException | NoRecordFoundException ex) {
 			System.out.println(ex.getMessage());
@@ -150,23 +164,24 @@ public class EngineerUI {
         } while (true);
 		
 		//take an object of DAO
-		EngineerDAO emgDAO = new EngineerDAOImpl();
+		EngineerDAO engDAO = new EngineerDAOImpl();
 		
 		try {
 			//call the update employee method
-			emgDAO.deleteEngineer(eid);
+			engDAO.deleteEngineer(eid);
 			//print success message
 			System.out.println("Engineer deleted successfully");
 		}catch(SomethingWentWrongException ex) {
 			//print error message if error if there
-			System.out.println(ex);
+			System.out.println(ex.getMessage());
 		}
 	}
 	public static boolean login(Scanner sc) {
+		sc.nextLine();
 		System.out.print("Enter username ");
-		String username = sc.next();
+		String username = sc.nextLine();
 		System.out.print("Enter password ");
-		String password = sc.next();
+		String password = sc.nextLine();
 		EngineerDAO engineerDAO = new EngineerDAOImpl();
 		try {
 			engineerDAO.login(username, password);
@@ -195,10 +210,10 @@ public class EngineerUI {
 		}
 	}
 	public static void viewlistofalltheproblemsattendedbyhim() {
-		EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+		EngineerDAO engineerDAO = new EngineerDAOImpl();
 		try {
-			 List<ComplainStatusDTO> list=employeeDAO.viewlistofalltheproblems();
-			System.out.println(list);
+			 List<ComplainStatusDTO> list=engineerDAO.viewAllProblemsAssignedToHim();
+			 list.forEach(System.out::println);
 		}catch(SomethingWentWrongException | NoRecordFoundException ex) {
 			System.out.println(ex);
 			
@@ -236,6 +251,68 @@ public class EngineerUI {
 		EmployeeDAO employeeDAO = new EmployeeDAOImpl();
 		try {
 			employeeDAO.updatePassword(newPassword);
+			System.out.println("Password changed successfully.");
+		}catch(SomethingWentWrongException ex) {
+			System.out.println(ex);
+			
+		}
+	}
+	public static void viewAllProblems() {
+		EngineerDAO engineerDAO=new EngineerDAOImpl();
+		
+		try {
+			List<ComplainStatusDTO>list=engineerDAO.viewAllProblemsAssignedToHim();
+			System.out.println(list);
+		} catch (SomethingWentWrongException | NoRecordFoundException e) {
+			
+			e.printStackTrace();
+		}
+	}
+	public static void updatestatusoftheproblem(Scanner sc) throws NoRecordFoundException {
+		
+		System.out.print("Enter Complain Id ");
+		int comId = sc.nextInt();
+		System.out.println("Enter Selection For Status ");
+		System.out.println("1. In Progress");
+		System.out.println("2. Solved");
+		int status = sc.nextInt();
+		EngineerDAO engineerDAO = new EngineerDAOImpl();
+		try {
+			engineerDAO.updateStatusOfProblem(comId, status);
+			System.out.println("Problem Status updated successfully");
+		}catch(SomethingWentWrongException ex) {
+			System.out.println(ex);
+			
+		}
+	}
+	public static void changeMyPassword(Scanner sc) throws SomethingWentWrongException, NoRecordFoundException {
+		System.out.print("Enter Your Old Password ");
+		sc.nextLine();
+		String oldPassword = sc.nextLine();
+		EngineerDAO engineerDAO=new EngineerDAOImpl();
+		
+		while (!oldPassword.equals(engineerDAO.getPassword())) {
+		    System.out.println("Incorrect old password. Please try again.");
+		    System.out.print("Enter old password: ");
+		    oldPassword = sc.nextLine();
+		}
+		System.out.print("Enter new password: ");
+		String newPassword = sc.nextLine();
+		
+		System.out.print("Re-enter new password: ");
+		String renewPassword = sc.nextLine();
+		
+		while (!newPassword.equals(renewPassword)) {
+		    System.out.println("You have entered two different password. Please try again.");
+		    System.out.print("Enter new password: ");
+			newPassword = sc.nextLine();
+			
+			System.out.print("Re-enter new password: ");
+			renewPassword = sc.nextLine();
+		}
+
+		try {
+			engineerDAO.updatePassword(newPassword);
 			System.out.println("Password changed successfully.");
 		}catch(SomethingWentWrongException ex) {
 			System.out.println(ex);

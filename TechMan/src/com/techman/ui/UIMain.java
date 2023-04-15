@@ -4,20 +4,32 @@ import java.util.Scanner;
 
 import com.techman.exception.NoRecordFoundException;
 import com.techman.exception.SomethingWentWrongException;
-
+/**
+ * Displays the admin menu with available options.
+ */
 
 public class UIMain {
 	static void displayAdminMenu() {
-		System.out.println("0. Log out Admin");
-		System.out.println("1. Add new Engineer");
-		System.out.println("2. View all the Registered Engineers.");
-		System.out.println("3. Delete An Engineer");
-		System.out.println("4. View all the raised problems.");
-		System.out.println("5. Assign problem to any Engineer.");
+		System.out.println("╔═══════════════════════════════════════════════╗\r\n"
+				+ "║                 Admin Menu                    ║\r\n"
+				+ "╠═══════════════════════════════════════════════╣\r\n"
+				+ "║ 0. Log out Admin                              ║\r\n"
+				+ "║ 1. Add new Engineer                           ║\r\n"
+				+ "║ 2. View all the Registered Engineers          ║\r\n"
+				+ "║ 3. Delete An Engineer                         ║\r\n"
+				+ "║ 4. View all the raised problems               ║\r\n"
+				+ "║ 5. Assign problem to any Engineer             ║\r\n"
+				+ "╠═══════════════════════════════════════════════╣");
 		
 	}
-	
-	static void adminMenu(Scanner sc) {
+	/**
+	 * Handles the admin menu selection and executes the appropriate action.
+	 * 
+	 * @param sc Scanner object used to read user input
+	 * @throws SomethingWentWrongException If an error occurs during execution
+	 * @throws NoRecordFoundException If no records are found during execution
+	 */
+	static void adminMenu(Scanner sc) throws SomethingWentWrongException, NoRecordFoundException {
 		int choice = 0;
 		do {
 			displayAdminMenu();
@@ -41,20 +53,23 @@ public class UIMain {
 					break;
 				case 5:
 					ProblemUI.assignproblemtoanyEngineer(sc);
-//					SELECT U.username, P.pro_name
-//					FROM orders O INNER JOIN product P ON 
-//					O.product_id = P.id INNER JOIN user U ON
-//					U.id = O.user_id;
-//					Create an object of OrderDTO
-//					new OrderDTO(new ProductDTO(null, pro_name, null, null), new UserDTO(null, username, null));
 					break;
 				default:
 					System.out.println("Invalid Selection, try again");
 			}
 		}while(choice != 0);
 	}
-	
-	static void adminLogin(Scanner sc) {
+	/**
+	 * Displays the login prompt for the admin user.
+	 * 
+	 * @param sc Scanner object used to read user input
+	 * @throws SomethingWentWrongException If an error occurs during execution
+	 * @throws NoRecordFoundException If no records are found during execution
+	 */
+	static void adminLogin(Scanner sc) throws SomethingWentWrongException, NoRecordFoundException {
+		System.out.println("-------------------------------------------------------\r\n"
+				+ "                       Login Prompt\r\n"
+				+ "-------------------------------------------------------");
 		System.out.print("Enter username ");
 		String username = sc.next();
 		System.out.print("Enter password ");
@@ -68,6 +83,10 @@ public class UIMain {
 			adminLogin(sc);
 		}
 	}
+	/**
+
+	Displays the user menu options for the logged in user.
+	*/
 	static void displayUserMenu() {
 		System.out.println("1. View the problems assigned to him by HOD");
 		System.out.println("2. Update the status of the problem addressed by him");
@@ -76,11 +95,26 @@ public class UIMain {
 		
 		System.out.println("0. Logout");
 	}
+	/**
+
+	This method allows an engineer to login to the system and access their menu options.
+
+	It takes a Scanner object as input to read user input.
+
+	If the login is not successful, the method returns without performing any actions.
+
+	The method loops until the user chooses to logout.
+
+	@paramsc the Scanner object to read user input
+
+	@throws NoRecordFoundException if no record is found for the engineer
+
+	@throws SomethingWentWrongException if an error occurs while performing the operation
+	*/
 	
-	static void engineerLogin(Scanner sc) {
+	static void engineerLogin(Scanner sc) throws NoRecordFoundException, SomethingWentWrongException {
 		if(!EngineerUI.login(sc))
 			return;
-		
 		//you are here means login is successful
 		int choice = 0;
 		do {
@@ -89,16 +123,16 @@ public class UIMain {
 			choice = sc.nextInt();
 			switch(choice) {
 				case 1:
-					//EngineerUI.viewAllProblems();
+					EngineerUI.viewAllProblems();
 					break;
 				case 2:
-//					EngineerUI.updatestatusoftheproblem(sc);
+					EngineerUI.updatestatusoftheproblem(sc);
 					break;
 				case 3:
-					//EngineerUI.Viewlistofalltheproblemsattendedbyhim();
+					EngineerUI.viewlistofalltheproblemsattendedbyhim();
 					break;
 				case 4:
-					//EngineerUI.changePassword();
+					EngineerUI.changeMyPassword(sc);
 					break;
 				case 0:
 					EngineerUI.logout();
@@ -108,15 +142,44 @@ public class UIMain {
 			}
 		}while(choice != 0);
 	}
-	
+	/**
+
+	This is the main class that drives the application flow. It provides the user with options to login as an HOD,
+
+	engineer, or employee. It uses the Scanner class to read user input and the UserUI, ProductUI, OrderUI, and
+
+	UserCategoryUI classes to display the appropriate UI for each user.
+
+	@param args command line arguments (not used)
+
+	@throws SomethingWentWrongException if there is an issue with the application flow
+
+	@throws NoRecordFoundException if no record is found for the user
+	*/
 	public static void main(String[] args) throws SomethingWentWrongException, NoRecordFoundException {
 		Scanner sc = new Scanner(System.in);
-		//user CategoryUI, ProductUI, OrderUI and 
-		// UserUI class here  
+		/**
+
+		This is the main method that drives the application flow. It provides the user with options to login as an HOD,
+		engineer, or employee. It uses the Scanner class to read user input and the UserUI, ProductUI, OrderUI, and
+		UserCategoryUI classes to display the appropriate UI for each user.
+		@param args command line arguments (not used)
+		@throws SomethingWentWrongException if there is an issue with the application flow
+		@throws NoRecordFoundException if no record is found for the user
+		*/
 		int choice = 0;
 		do {
-			System.out.println("1. HOD Login\n2. Engineer Login\n3. "
-					+ "Emplyee LogIn Up\n0. Exit");
+			System.out.println("╔═════════════════════════════════════════════════════╗\r\n"
+					+ "║                                                     ║\r\n"
+					+ "║                 WELCOME TO TACHMAN!                 ║\r\n"
+					+ "║                                                     ║\r\n"
+					+ "║     Please select an option from the menu below:    ║\r\n"
+					+ "║                                                     ║\r\n"
+					+ "║            1. HOD Login          2. Engineer Login  ║\r\n"
+					+ "║                                                     ║\r\n"
+					+ "║            3. Employee Login      0. Exit           ║\r\n"
+					+ "║                                                     ║\r\n"
+					+ "╚═════════════════════════════════════════════════════╝");
 			choice = sc.nextInt();
 			switch(choice) {
 				case 0:
@@ -137,7 +200,14 @@ public class UIMain {
 		}while(choice != 0);
 		sc.close();
 	}
+	/**
 
+	This class provides a method to login for an employee and displays a menu of options for them to select from.
+
+	These options include registering a complaint, checking the status of their complaint, viewing a list of all the
+
+	complaints they have raised, updating their password, and logging out.
+	*/
 	private static void emplyeeLogin(Scanner sc) throws SomethingWentWrongException, NoRecordFoundException {
 		if(!EmployeeUI.login(sc))
 			return;

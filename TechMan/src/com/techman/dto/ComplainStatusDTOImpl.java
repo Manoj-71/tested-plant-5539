@@ -61,8 +61,8 @@ public class ComplainStatusDTOImpl implements ComplainStatusDTO{
 
 	@Override
 	public String toString() {
-		return "Com_id=" + com_id + ", department_name=" + department_name + ", subtype="
-				+ subtype + ", status=" + status + ", email=" + email + "]";
+		return "Com_id: " + com_id + " Department: " + department_name + " subtype :"
+				+ subtype + " status: " + status + " Assigned: " + email + "\n";
 	}
 	
 	
